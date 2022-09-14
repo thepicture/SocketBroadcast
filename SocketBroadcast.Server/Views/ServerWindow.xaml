@@ -1,0 +1,35 @@
+﻿<Window x:Class="SocketBroadcast.Server.ServerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SocketBroadcast.Server"
+        mc:Ignorable="d"
+        Title="SocketBroadcast.Server"
+        Height="450"
+        Width="800"
+        MinHeight="450"
+        MinWidth="800"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <UniformGrid Columns="2"
+                     VerticalAlignment="Center"
+                     HorizontalAlignment="Center">
+            <TextBlock Text="IPv4"
+                       Style="{StaticResource CommonBlock}" />
+            <TextBox x:Name="IpV4Box"
+                     PreviewTextInput="OnAddressChanged" />
+            <TextBlock Text="Port"
+                       Style="{StaticResource CommonBlock}" />
+            <TextBox x:Name="PortBox"
+                     PreviewTextInput="OnPortChanged" />
+            <Button Content="Listen"
+                    Name="ListenButton"
+                    Click="OnListen" />
+            <Button Content="Stop listening"
+                    Name="StopListeningButton"
+                    IsEnabled="False"
+                    Click="OnStopListening" />
+        </UniformGrid>
+    </Grid>
+</Window>
